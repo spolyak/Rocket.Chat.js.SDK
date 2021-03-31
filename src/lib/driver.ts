@@ -394,8 +394,8 @@ export function respondToMessages (
     }
 
     // Grab the first message in the list
-    message = message.shift()
-
+    //message = message.shift()
+    message = Array.isArray(message) ? message[0] : message;
     // Ignore bot's own messages
     if (message.u._id === userId) return
 
